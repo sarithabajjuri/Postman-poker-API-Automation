@@ -1,0 +1,3203 @@
+{
+	"info": {
+		"_postman_id": "c542ac64-10d8-4483-b5df-b99d87903337",
+		"name": "Poker API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "32896089"
+	},
+	"item": [
+		{
+			"name": "resourceList/Pagination",
+			"item": [
+				{
+					"name": "Named",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "berries",
+			"item": [
+				{
+					"name": "Berries",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"Berry_Name\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{berryService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Berry",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{berryService}}{{Berry_Name}}/"
+					},
+					"response": []
+				},
+				{
+					"name": "Berry Firmnesses",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"Berry_firmnName\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{berryfirmnessService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Berry Firmness",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{berryfirmnessService}}{{Berry_firmnName}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Berry Flavors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"Berry_flName\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{berryflavorService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Berry-flavor",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{berryflavorService}}{{Berry_flName}}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "contests",
+			"item": [
+				{
+					"name": "Contest Types",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"Contest_Name\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{ContestypeService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "contest-Type",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{ContestypeService}}{{Contest_Name}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Contest Effects",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"Contest_EName\",jsonData.results[0].url);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{contesteffectService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "contest-Effect",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{contesteffectService}}/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Super Contest Effects",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"Supercontest_EName\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{supercontesteffectService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Super Contest Effect",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{supercontesteffectService}}/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "encounters",
+			"item": [
+				{
+					"name": "Encounter Methods",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"encountermthdName\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{encountermethodService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Encounter Method",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{encountermethodService}}{{encountermthdName}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Encounter Conditions",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"encountrconditionName\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{encounterconditionService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Encounter Condition",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{encounterconditionService}}{{encountrconditionName}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Encounter Condition Values",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"encountercvalueName\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{encounterconditionvalueService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Encounter Condition Value",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{encounterconditionvalueService}}{{encountercvalueName}}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "evolution",
+			"item": [
+				{
+					"name": "Evolution Chains",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"evolutioncName\",jsonData.results[0].url);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{evolutionchainService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Evolution Chain",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{evolutionchainService}}/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Evolution Triggers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"evolutionTName\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}evolution-trigger/"
+					},
+					"response": []
+				},
+				{
+					"name": "Evolution Trigger",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}evolution-trigger/{{evolutionTName}}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "games",
+			"item": [
+				{
+					"name": "Generations",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"genName\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{generationService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Generation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{generationService}}{{genName}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Pokedexes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"pokedxName\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{pokedexService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Pokedexe",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{pokedexService}}{{pokedxName}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Versions",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"version_Name\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{versionService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "version",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{versionService}}{{version_Name}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Version Groups",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"version_group_Name\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{versiongroupService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Version Group",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{versiongroupService}}{{version_group_Name}}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "items",
+			"item": [
+				{
+					"name": "Items",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"Item_Name\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{itemService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Item",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{itemService}}{{Item_Name}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Item Attributes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"Item_attributeName\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{itemattributeService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Item Attribute",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{itemattributeService}}{{Item_attributeName}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Item Categories",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"Item_categoryName\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{itemcategoryService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Item Categorie",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{itemcategoryService}}{{Item_categoryName}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Item Fling Effects",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"Item_FlingeffectName\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{itemflingeffectService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Item Fling Effect",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{itemflingeffectService}}{{Item_FlingeffectName}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Item Pockets",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"Item_PName\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{itempocketService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Item Pocket",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{itempocketService}}{{Item_PName}}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "locations",
+			"item": [
+				{
+					"name": "Locations",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"Location_Name\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{locationService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Location",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{locationService}}{{Location_Name}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Location Areas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"areaName\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{locationareaService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Location Area",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{locationareaService}}{{areaName}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Pal Park Areas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"Palpark_areaName\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{palparkareaService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Pal Park Area",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{palparkareaService}}{{Palpark_areaName}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Regions",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"R_Name\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{regionService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Region",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{regionService}}{{R_Name}}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "machines",
+			"item": [
+				{
+					"name": "Machines",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"M_Name\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{machineService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Machine",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{machineService}}/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "moves",
+			"item": [
+				{
+					"name": "Moves",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"Move_Name\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{moveService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Move",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{moveService}}{{Move_Name}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Move Ailments",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"Move_AlmtName\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{moveailmentService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Move Ailment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{moveailmentService}}{{Move_AlmtName}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Move Battle Styles",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"Move_bstyle_Name\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{movebattlestyleService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Move Battle Style",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{movebattlestyleService}}{{Move_bstyle_Name}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Move Categories",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"Move_Category_Name\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{movecategoryService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Move Categorie",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{movecategoryService}}{{Move_Category_Name}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Move Damage Classes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"Move_damageclass_Name\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{movedamageclassService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Move Damage Classe",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{movedamageclassService}}{{Move_damageclass_Name}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Move Learn Methods",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"Move_learnmthd_Name\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{movelearnmethodService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Move Learn Method",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{movelearnmethodService}}{{Move_learnmthd_Name}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Move Targets",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"Move_TName\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{movetargetService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Move Target",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{movetargetService}}{{Move_TName}}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "pokémon",
+			"item": [
+				{
+					"name": "Abilities",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"Ability_Name\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{abilityService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Abilitie",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{abilityService}}{{Ability_Name}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Characteristics",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"Characteristic_Name\",jsonData.results[0].url);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{characteristicService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Characteristic",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{characteristicService}}/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Egg Groups",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"E_GroupName\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{egggroupService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Egg Group",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{egggroupService}}{{E_GroupName}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Genders",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"Gender_Name\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{genderService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Gender",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{genderService}}{{Gender_Name}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Growth Rates",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"GrowthRate_Name\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{growthrateService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Growth Rate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{growthrateService}}{{GrowthRate_Name}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Natures",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"Natr_Name\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{natureService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Nature",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{natureService}}{{Natr_Name}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Pokeathlon Stats",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"Pokthln_St_Name\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{pokeathlonstatService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Pokeathlon Stat",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{pokeathlonstatService}}{{Pokthln_St_Name}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Pokemons",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"P_Name\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{pokemonService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "pokemon",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{pokemonService}}{{P_Name}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Pokemon Location Areas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{pokemonService}}{{P_Name}}{{pokemonlocationareaService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Pokemon Colors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"P_colorName\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{pokemoncolorService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Pokemon Color",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{pokemoncolorService}}{{P_colorName}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Pokemon Forms",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"P_FormName\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{pokemonformService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Pokemon Form",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{pokemonformService}}{{P_FormName}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Pokemon Habitats",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"P_HabitatName\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{pokemonhabitatService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Pokemon Habitat",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{pokemonhabitatService}}{{P_HabitatName}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Pokemon Shapes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"P_ShapeName\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{pokemonshapeService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Pokemon Shape",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{pokemonshapeService}}{{P_ShapeName}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Pokemon Species",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"P_Species_Name\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{pokemonspeciesService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Pokemon Specie",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{pokemonspeciesService}}{{P_Species_Name}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Stats",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"St_Name\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{statService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Stat",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{statService}}{{St_Name}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Types",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"Type_Name\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{typeService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Type",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{typeService}}{{Type_Name}}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "utility",
+			"item": [
+				{
+					"name": "Languages",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									"const jsonData = pm.response.json()\r",
+									"pm.collectionVariables.set(\"Lang_Name\",jsonData.results[0].name);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{languageService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Language",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than \" + pm.collectionVariables.get(\"response_time\") + \"ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.collectionVariables.get('response_time')));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}{{languageService}}{{Lang_Name}}"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseurl",
+			"value": "https://pokeapi.co/api/v2/",
+			"type": "string"
+		},
+		{
+			"key": "response_time",
+			"value": "5000",
+			"type": "string"
+		},
+		{
+			"key": "resourceListName",
+			"value": ""
+		},
+		{
+			"key": "abilityService",
+			"value": "ability/",
+			"type": "string"
+		},
+		{
+			"key": "berryService",
+			"value": "berry/",
+			"type": "string"
+		},
+		{
+			"key": "berryName",
+			"value": ""
+		},
+		{
+			"key": "berryfirmnessService",
+			"value": "berry-firmness/",
+			"type": "string"
+		},
+		{
+			"key": "berryflavorService",
+			"value": "berry-flavor/",
+			"type": "string"
+		},
+		{
+			"key": "ContestypeService",
+			"value": "contest-type/",
+			"type": "string"
+		},
+		{
+			"key": "contesteffectService",
+			"value": "contest-effect/",
+			"type": "string"
+		},
+		{
+			"key": "supercontesteffectService",
+			"value": "super-contest-effect/",
+			"type": "string"
+		},
+		{
+			"key": "encountermethodService",
+			"value": "encounter-method/",
+			"type": "string"
+		},
+		{
+			"key": "encounterconditionService",
+			"value": "encounter-condition/",
+			"type": "string"
+		},
+		{
+			"key": "encounterconditionvalueService",
+			"value": "encounter-condition-value/",
+			"type": "string"
+		},
+		{
+			"key": "evolutionchainService",
+			"value": "evolution-chain/",
+			"type": "string"
+		},
+		{
+			"key": "generationService",
+			"value": "generation/",
+			"type": "string"
+		},
+		{
+			"key": "pokedexService",
+			"value": "pokedex/",
+			"type": "string"
+		},
+		{
+			"key": "versionService",
+			"value": "version/",
+			"type": "string"
+		},
+		{
+			"key": "versiongroupService",
+			"value": "version-group/",
+			"type": "string"
+		},
+		{
+			"key": "itemService",
+			"value": "item/",
+			"type": "string"
+		},
+		{
+			"key": "itemattributeService",
+			"value": "item-attribute/",
+			"type": "string"
+		},
+		{
+			"key": "itemcategoryService",
+			"value": "item-category/",
+			"type": "string"
+		},
+		{
+			"key": "itemflingeffectService",
+			"value": "item-fling-effect/",
+			"type": "string"
+		},
+		{
+			"key": "itempocketService",
+			"value": "item-pocket/",
+			"type": "string"
+		},
+		{
+			"key": "locationService",
+			"value": "location/",
+			"type": "string"
+		},
+		{
+			"key": "locationareaService",
+			"value": "location-area/",
+			"type": "string"
+		},
+		{
+			"key": "palparkareaService",
+			"value": "pal-park-area/",
+			"type": "string"
+		},
+		{
+			"key": "regionService",
+			"value": "region/",
+			"type": "string"
+		},
+		{
+			"key": "machineService",
+			"value": "machine/",
+			"type": "string"
+		},
+		{
+			"key": "moveService",
+			"value": "move/",
+			"type": "string"
+		},
+		{
+			"key": "moveailmentService",
+			"value": "move-ailment/",
+			"type": "string"
+		},
+		{
+			"key": "movebattlestyleService",
+			"value": "move-battle-style/",
+			"type": "string"
+		},
+		{
+			"key": "movecategoryService",
+			"value": "move-category/",
+			"type": "string"
+		},
+		{
+			"key": "movedamageclassService",
+			"value": "move-damage-class/",
+			"type": "string"
+		},
+		{
+			"key": "movelearnmethodService",
+			"value": "move-learn-method/",
+			"type": "string"
+		},
+		{
+			"key": "movetargetService",
+			"value": "move-target/",
+			"type": "string"
+		},
+		{
+			"key": "abilityName",
+			"value": ""
+		},
+		{
+			"key": "characteristicService",
+			"value": "characteristic/",
+			"type": "string"
+		},
+		{
+			"key": "characteristicName",
+			"value": ""
+		},
+		{
+			"key": "egggroupService",
+			"value": "egg-group/",
+			"type": "string"
+		},
+		{
+			"key": "genderService",
+			"value": "gender/",
+			"type": "string"
+		},
+		{
+			"key": "growthrateService",
+			"value": "growth-rate/",
+			"type": "string"
+		},
+		{
+			"key": "natureService",
+			"value": "nature/",
+			"type": "string"
+		},
+		{
+			"key": "pokeathlonstatService",
+			"value": "pokeathlon-stat/",
+			"type": "string"
+		},
+		{
+			"key": "pokemonService",
+			"value": "pokemon/",
+			"type": "string"
+		},
+		{
+			"key": "pokemoncolorService",
+			"value": "pokemon-color/",
+			"type": "string"
+		},
+		{
+			"key": "pokemonformService",
+			"value": "pokemon-form/",
+			"type": "string"
+		},
+		{
+			"key": "pokemonhabitatService",
+			"value": "pokemon-habitat/",
+			"type": "string"
+		},
+		{
+			"key": "pokemonshapeService",
+			"value": "pokemon-shape/",
+			"type": "string"
+		},
+		{
+			"key": "pokemonspeciesService",
+			"value": "pokemon-species/",
+			"type": "string"
+		},
+		{
+			"key": "statService",
+			"value": "stat/",
+			"type": "string"
+		},
+		{
+			"key": "typeService",
+			"value": "type/",
+			"type": "string"
+		},
+		{
+			"key": "languageService",
+			"value": "language/",
+			"type": "string"
+		},
+		{
+			"key": "pokemonlocationareaService",
+			"value": "/encounters",
+			"type": "string"
+		},
+		{
+			"key": "evolutiontriggerService",
+			"value": "evolution-trigger/",
+			"type": "string"
+		},
+		{
+			"key": "Berry_Name",
+			"value": ""
+		},
+		{
+			"key": "Berry_firmnName",
+			"value": ""
+		},
+		{
+			"key": "Berry_flName",
+			"value": ""
+		},
+		{
+			"key": "Contest_Name",
+			"value": ""
+		},
+		{
+			"key": "Contest_EName",
+			"value": ""
+		},
+		{
+			"key": "Supercontest_EName",
+			"value": ""
+		},
+		{
+			"key": "encountermthdName",
+			"value": ""
+		},
+		{
+			"key": "encountrconditionName",
+			"value": ""
+		},
+		{
+			"key": "encountercvalueName",
+			"value": ""
+		},
+		{
+			"key": "evolutioncName",
+			"value": ""
+		},
+		{
+			"key": "evolutionTName",
+			"value": ""
+		},
+		{
+			"key": "genName",
+			"value": ""
+		},
+		{
+			"key": "pokedxName",
+			"value": ""
+		},
+		{
+			"key": "version_Name",
+			"value": ""
+		},
+		{
+			"key": "version_group_Name",
+			"value": ""
+		},
+		{
+			"key": "Item_Name",
+			"value": ""
+		},
+		{
+			"key": "Item_attributeName",
+			"value": ""
+		},
+		{
+			"key": "Item_categoryName",
+			"value": ""
+		},
+		{
+			"key": "Item_FlingeffectName",
+			"value": ""
+		},
+		{
+			"key": "Item_PName",
+			"value": ""
+		},
+		{
+			"key": "Location_Name",
+			"value": ""
+		},
+		{
+			"key": "areaName",
+			"value": ""
+		},
+		{
+			"key": "Palpark_areaName",
+			"value": ""
+		},
+		{
+			"key": "R_Name",
+			"value": ""
+		},
+		{
+			"key": "M_Name",
+			"value": ""
+		},
+		{
+			"key": "Move_Name",
+			"value": ""
+		},
+		{
+			"key": "Move_AlmtName",
+			"value": ""
+		},
+		{
+			"key": "Move_bstyle_Name",
+			"value": ""
+		},
+		{
+			"key": "Move_Category_Name",
+			"value": ""
+		},
+		{
+			"key": "Move_damageclass_Name",
+			"value": ""
+		},
+		{
+			"key": "Move_learnmthd_Name",
+			"value": ""
+		},
+		{
+			"key": "Move_TName",
+			"value": ""
+		},
+		{
+			"key": "Ability_Name",
+			"value": ""
+		},
+		{
+			"key": "Characteristic_Name",
+			"value": ""
+		},
+		{
+			"key": "E_GroupName",
+			"value": ""
+		},
+		{
+			"key": "Gender_Name",
+			"value": ""
+		},
+		{
+			"key": "GrowthRate_Name",
+			"value": ""
+		},
+		{
+			"key": "Natr_Name",
+			"value": ""
+		},
+		{
+			"key": "Pokthln_St_Name",
+			"value": ""
+		},
+		{
+			"key": "P_Name",
+			"value": ""
+		},
+		{
+			"key": "P_colorName",
+			"value": ""
+		},
+		{
+			"key": "P_FormName",
+			"value": ""
+		},
+		{
+			"key": "P_HabitatName",
+			"value": ""
+		},
+		{
+			"key": "P_ShapeName",
+			"value": ""
+		},
+		{
+			"key": "P_Species_Name",
+			"value": ""
+		},
+		{
+			"key": "St_Name",
+			"value": ""
+		},
+		{
+			"key": "Type_Name",
+			"value": ""
+		},
+		{
+			"key": "Lang_Name",
+			"value": ""
+		}
+	]
+}
